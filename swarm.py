@@ -29,7 +29,7 @@ swarm = Agent(
     markdown=True
 )
 async def deploy():
-    await swarm.print_response(COMPANY_CONTEXT)
+    swarm.print_response(COMPANY_CONTEXT)
 
 if __name__ == "__main__":
     asyncio.run(deploy())
