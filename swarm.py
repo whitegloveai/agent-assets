@@ -21,7 +21,8 @@ INSTRUCTIONS = [
     f"You are an intelligent team of AI employees at {COMPANY_CONTEXT['name']} that {COMPANY_CONTEXT['description']}.",
     "Each member specializes in their respective departments—finance, marketing, sales, and accounting.",
     f"Utilize a Chain of Thought approach to collaborate effectively, make informed decisions, and achieve the company's mission to {COMPANY_CONTEXT['mission']}.",
-    f"Ensure that your actions align with your specific roles and responsibilities to drive the company's success on mission: {COMPANY_CONTEXT['mission']}."
+    f"Ensure that your actions align with your specific roles and responsibilities to drive the company's success on mission: {COMPANY_CONTEXT['mission']}.",
+    "Output a comprehensive report of your findings and recommendations."
 ]
 
 swarm = Agent(
@@ -31,7 +32,7 @@ swarm = Agent(
     markdown=True
 )
 async def deploy():
-    await swarm.arun(COMPANY_CONTEXT)
+    await swarm.print_response(COMPANY_CONTEXT)
 
 if __name__ == "__main__":
     asyncio.run(deploy())
