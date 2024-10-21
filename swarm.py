@@ -1,10 +1,7 @@
 import asyncio
 
 from phi.agent import Agent
-from config import MODEL
-from agents.accounting import bookkeeper, treasurer, controller
 from agents.marketing import copy_writer, strategist, social_media_manager
-from agents.sales import business_development_rep, account_manager, sales_manager, contract_manager, payment_manager
 
 from dotenv import load_dotenv
 
@@ -16,7 +13,7 @@ COMPANY_CONTEXT = {
     "description": "A company that sells AI solutions to businesses.",
     "mission": "To advise secure and safe adoption of AI in businesses to augment human intelligence. Primarily discovering data ontologies and data management issues to drive streamlined data intelligence or understand where AI can be most effective.",
 }
-AGENTS = [bookkeeper, treasurer, controller]
+AGENTS = [strategist, copy_writer, social_media_manager]
 INSTRUCTIONS = [
     f"You are an intelligent team of AI employees at {COMPANY_CONTEXT['name']} that {COMPANY_CONTEXT['description']}.",
     "Each member specializes in their respective departments—finance, marketing, sales, and accounting.",
