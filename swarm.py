@@ -14,8 +14,12 @@ swarm = Agent(
 )
 
 async def deploy():
+<<<<<<< HEAD
     AI_teacher.print_response("Analyze the given CSV file and teach me about AI's data analysis capability", stream=True)
     
+=======
+    swarm.print_response(COMPANY_CONTEXT)
+>>>>>>> 6c56fcd47a129395d22d9302c4b226dd107ebd97
 
 if __name__ == "__main__":
     asyncio.run(deploy())
