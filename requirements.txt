@@ -1,3 +1,4 @@
+pandas
 phidata
 openai
 duckdb
