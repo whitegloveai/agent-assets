@@ -2,6 +2,9 @@ import asyncio
 
 from phi.agent import Agent
 from agents.marketing import copy_writer, strategist, social_media_manager
+from agents.google import google_agent
+from agents.wiki import wiki_agent
+from agents.youtube import youtube_agent
 
 from dotenv import load_dotenv
 
@@ -13,7 +16,7 @@ COMPANY_CONTEXT = {
     "description": "A company that sells AI solutions to businesses.",
     "mission": "To advise secure and safe adoption of AI in businesses to augment human intelligence. Primarily discovering data ontologies and data management issues to drive streamlined data intelligence or understand where AI can be most effective.",
 }
-AGENTS = [strategist, copy_writer, social_media_manager]
+AGENTS = [strategist, copy_writer, social_media_manager, google_agent, wiki_agent, youtube_agent]
 INSTRUCTIONS = [
     f"You are an intelligent team of AI employees at {COMPANY_CONTEXT['name']} that {COMPANY_CONTEXT['description']}.",
     "Each member specializes in their respective departments—finance, marketing, sales, and accounting.",
@@ -29,7 +32,7 @@ swarm = Agent(
     markdown=True
 )
 async def deploy():
-    await swarm.print_response(COMPANY_CONTEXT)
+    swarm.print_response(COMPANY_CONTEXT)
 
 if __name__ == "__main__":
     asyncio.run(deploy())
