@@ -32,7 +32,7 @@ EmailAgent = Agent(
 )
 
 # Functions for processing emails
-def process_in_chunks(df, chunk_size=50):
+def process_in_chunks(df, chunk_size=30):
     total_emails = len(df)
     all_prioritized_emails = []
     for i in range(0, total_emails, chunk_size):
